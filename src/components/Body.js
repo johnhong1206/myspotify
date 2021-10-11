@@ -5,10 +5,7 @@ import {
   selectMusic,
   selectTracks,
 } from "../features/getPlaylistSlice";
-import {
-  selectPlaylist,
-  selectWeeklyPlaylist,
-} from "../features/playlistSlice";
+import { selectPlaylist } from "../features/playlistSlice";
 import BodyItem from "./BodyItem";
 import Header from "./Header";
 import TrackList from "./TrackList";
@@ -22,7 +19,6 @@ function Body({ spotify }) {
 
   const playlists = useSelector(selectPlaylist);
   const currentPlaylist = useSelector(selectCurrentPlaylist);
-  const [myCurrentPlaylist, setMyCurrentPlaylist] = useState(null);
   const tracks = useSelector(selectTracks);
   const playing = useSelector(isPlaying);
   const track = useSelector(selectMusic);
@@ -32,10 +28,6 @@ function Body({ spotify }) {
       playlist.id.includes(currentPlaylist)
     )
   );
-
-  useEffect(() => {
-    setMyCurrentPlaylist();
-  });
 
   const startPlaying = () => {
     dispatch(playMusic(true));

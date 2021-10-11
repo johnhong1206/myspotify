@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getMusic,
@@ -26,13 +26,11 @@ const spotify = new SpotifyWebApi();
 function Player() {
   const dispatch = useDispatch();
 
-  const user = useSelector(selectUser);
   const music = useSelector(selectAudio);
   const playing = useSelector(isPlaying);
   const playlist = useSelector(selectTracks);
   const musicInfo = useSelector(selectMusic);
 
-  const volume = useSelector(selectVolume);
   const repeat = useSelector(selectRepeat);
   const MenuNav = useSelector(selectmenuIsOpen);
   const playsongId = musicInfo?.id.toString();

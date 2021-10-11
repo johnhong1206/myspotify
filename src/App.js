@@ -45,16 +45,14 @@ function App() {
   };
 
   useEffect(() => {
-    spotify.getMe().then((user) => {
-      dispatch(login(user));
-    });
-  }, []);
-
-  useEffect(() => {
     const hash = getAccessTokenFromUrl();
     const _token = hash["access_token"];
 
     if (_token) {
+      spotify.getMe().then((user) => {
+        dispatch(login(user));
+      });
+
       dispatch(gettoken(_token));
 
       spotify.setAccessToken(_token);

@@ -47,7 +47,7 @@ function Footer({ player }) {
 
   useEffect(() => {
     dispatch(setVolume(value));
-  }, [value, volume]);
+  }, [value]);
 
   const startPlaying = () => {
     dispatch(playMusic(true));

@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { getCurrentPlaylist, getTracks } from "../features/getPlaylistSlice";
 import { closemenu } from "../features/menuSlice";
 
 function SidebarOption({ spotify, title, id, Icon, images, description }) {
   const dispatch = useDispatch();
-  const [track, setTrack] = useState([]);
 
   const changePlayList = () => {
     dispatch(getCurrentPlaylist({ id, description, title, images }));
