@@ -4,8 +4,9 @@ export const authEndpoint = "https://accounts.spotify.com/authorize";
 
 //https://zhspotify.netlify.app/
 //https://next-spotify-eight.vercel.app/
+//https://zhnewspotify.netlify.app/
 
-const redirectUrl = "http://localhost:3000/"; //where are you running your app (local react by default is http://localhost:3000/window.location.origin + "/";
+const redirectUrl = "https://zhnewspotify.netlify.app/"; //where are you running your app (local react by default is http://localhost:3000/window.location.origin + "/";
 const clientId = "c989adbd53034b19a759e9313d942048"; // clintId you can get at https://developer.spotify.com/dashboard
 
 /**
