@@ -67,20 +67,7 @@ function App() {
     }
   }, [token]);
 
-  return (
-    <div>
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            <Player />
-          </Route>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-        </Switch>
-      </Router>
-    </div>
-  );
+  return <div>{!token ? <Login /> : <Player />}</div>;
 }
 
 export default App;
