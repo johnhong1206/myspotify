@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -24,8 +24,8 @@ function App() {
 
   useEffect(() => {
     if (playing) {
-      const trackAartist = track.artists[0].name;
-      const trackname = track.name;
+      const trackAartist = track?.artists[0].name;
+      const trackname = track?.name;
       setTitle(`${trackAartist} - ${trackname} `);
     } else {
       setTitle("My Spotify");

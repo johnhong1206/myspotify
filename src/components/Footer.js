@@ -1,14 +1,7 @@
 import React, { useEffect, useState } from "react";
-import {
-  BsShuffle,
-  BsSkipStartCircle,
-  BsSkipEndCircle,
-  BsPlayCircle,
-  BsPauseCircle,
-} from "react-icons/bs";
+
 import { BiVolumeLow, BiVolumeFull } from "react-icons/bi";
 import {
-  MdOutlinePlaylistPlay,
   MdRepeat,
   MdRepeatOne,
   MdPlayCircleOutline,
@@ -18,14 +11,13 @@ import {
   MdOutlineFastForward,
   MdOutlineShuffleOn,
 } from "react-icons/md";
-import { BiRepeat } from "react-icons/bi";
+
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import Stack from "@mui/material/Stack";
-import Grid from "@mui/material/Grid";
+
 import {
   getMusic,
-  selectCurrentPlaylist,
   selectMusic,
   selectTracks,
 } from "../features/getPlaylistSlice";

@@ -12,7 +12,6 @@ import {
 import BodyItem from "./BodyItem";
 import Header from "./Header";
 import TrackList from "./TrackList";
-import { AiOutlinePauseCircle } from "react-icons/ai";
 import { MdOutlineFavoriteBorder } from "react-icons/md";
 import { FiMoreHorizontal } from "react-icons/fi";
 import { isPlaying, playMusic, setShuffle } from "../features/playingSlice";
@@ -22,7 +21,6 @@ function Body({ spotify }) {
   const dispatch = useDispatch();
 
   const playlists = useSelector(selectPlaylist);
-  const weeklyPlaylists = useSelector(selectWeeklyPlaylist);
   const currentPlaylist = useSelector(selectCurrentPlaylist);
   const [myCurrentPlaylist, setMyCurrentPlaylist] = useState(null);
   const tracks = useSelector(selectTracks);

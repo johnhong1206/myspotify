@@ -1,17 +1,10 @@
-import React, { useEffect } from "react";
-import TrackDetail from "./TrackDetail";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useDispatch } from "react-redux";
 import { getMusic } from "../features/getPlaylistSlice";
-import {
-  isPlaying,
-  playMusic,
-  playCurrentMusic,
-  selectMusic,
-} from "../features/playingSlice";
+import { playMusic, playCurrentMusic } from "../features/playingSlice";
 
 function TrackList({ track }) {
   const dispatch = useDispatch();
-  const playing = useSelector(isPlaying);
 
   const changeTrack = () => {
     dispatch(getMusic(track));
