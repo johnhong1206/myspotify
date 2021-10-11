@@ -19,19 +19,14 @@ function App() {
   const token = useSelector(selectToken);
   const track = useSelector(selectMusic);
   const playing = useSelector(isPlaying);
+  const trackAartist = track?.artists[0].name;
+  const trackname = track?.name;
 
-  const [title, setTitle] = useState("My Spotify");
+  const [title, setTitle] = useState(`${trackAartist} - ${trackname}`);
 
   useEffect(() => {
-    if (playing) {
-      const trackAartist = track?.artists[0].name;
-      const trackname = track?.name;
-      setTitle(`${trackAartist} - ${trackname} `);
-    } else {
-      setTitle("My Spotify");
-    }
     document.title = title;
-  }, [title, playing]);
+  }, [title]);
 
   const getAccessTokenFromUrl = () => {
     return window.location.hash
