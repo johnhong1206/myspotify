@@ -22,11 +22,16 @@ function App() {
   const trackAartist = track?.artists[0].name;
   const trackname = track?.name;
 
-  const [title, setTitle] = useState(`${trackAartist} - ${trackname}`);
+  const [title, setTitle] = useState("My Spotify");
 
   useEffect(() => {
+    if (playing) {
+      setTitle(`${trackAartist} - ${trackname} `);
+    } else {
+      setTitle("My Spotify");
+    }
     document.title = title;
-  }, [title]);
+  }, [title, playing]);
 
   const getAccessTokenFromUrl = () => {
     return window.location.hash
