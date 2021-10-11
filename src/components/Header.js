@@ -3,6 +3,7 @@ import { AiOutlineSearch, AiOutlineMenu } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
 import { openmenu } from "../features/menuSlice";
+import { loginUrl } from "../spotify";
 
 function Header() {
   const dispatch = useDispatch();
@@ -27,13 +28,20 @@ function Header() {
         />
       </div>
       <div className="flex flex-row items-center mx-4">
-        <img
-          src={user?.images[0]?.url}
-          alt={user?.display_name}
-          width="60"
-          height="60"
-          className="rounded-full cursor-pointer"
-        />
+        <a href={loginUrl}>
+          <img
+            src={
+              user
+                ? user?.images[0]?.url
+                : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png"
+            }
+            alt={user?.display_name}
+            width="60"
+            height="60"
+            className="rounded-full cursor-pointer"
+          />
+        </a>
+
         <h4 className="hidden lg:inline-flex font-medium text-xs ml-2">
           {user?.display_name}
         </h4>
